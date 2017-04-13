@@ -1,4 +1,5 @@
 require './credit_calc'
+require './app'
 
 RSpec.configure do |config|
   
@@ -16,3 +17,4 @@ RSpec.configure do |config|
 
 
 end
+

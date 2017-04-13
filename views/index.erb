@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Кредитний калькулятор</title>
+	</head>
+	<body>
+		<h1>Кредитні відомості</h1>
+
+		<form action="/result" method="post">
+			Процентна ставка(%): <input type="number" value="" min="0" name="perc"></br></input>
+			Сума кредиту: <input type="number" name="summa" value="" min="1"></br></input>
+			Термін погашення (в місяцях): <input type="number" value="" name="term" min="1"></br></input>
+			<input type="radio" name="howtopay" value="annuitet"  >Аннуїтетний<br/>
+			<input type="radio" name="howtopay" value="standart"  >Рівними частинами<br/>
+			<button type="submit" >Розрахувати</button>
+
+
+		</form>
+	</body>
+</html>
