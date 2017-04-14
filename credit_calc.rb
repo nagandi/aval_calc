@@ -12,11 +12,13 @@ class CreditCalc
 		@all_pay = []
 		year_perc = @percent / 1200
 
-		@term.times { |t|
+		@term.times do
 			@month_perc << @main_pay.last*(year_perc)
 			@all_pay 		<< @payment_without_perc.last + @month_perc.last
 			@main_pay 	<< @main_pay.last - @payment_without_perc.last
-		}
+			@payment_without_perc << @payment_without_perc.last
+		end
+		@payment_without_perc.shift
 	end
 end
 
@@ -33,6 +35,8 @@ class AnnuitetCredit < CreditCalc
       @month_perc << @main_pay.last * year_perc
       @payment_without_perc << @all_pay.last - @month_perc.last
       @main_pay << @main_pay.last - @payment_without_perc.last
+      @all_pay << @all_pay.last
     end
+    @all_pay.shift
 	end
 end

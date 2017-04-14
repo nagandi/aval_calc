@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Результати</title>
+    </head>
+
+
+
+<style type="text/css">
+   TABLE {
+    width: auto;
+    border-collapse: collapse;
+   }
+   TD, TH {
+    padding: 10px; /* навколо тексту */
+    border: 2px solid black; 
+   }
+ 
+  </style>
+ </head>
+<body>
+    <table border='1'>
+      <caption>Графік платежів</caption>
+     <tr>
+      <th>Погашення кредиту</th>
+        <% @result.payment_without_perc.each do |p| %>
+          <td><%= p.round(2) %></td>
+        <% end %>
+      </tr>
+      <tr>
+      <th>Погашення %</th> 
+       <% @result.month_perc.each do |p| %>
+          <td><%= p.round(2) %></td>
+        <% end %>
+      </tr>
+      <tr>
+      <th>Загальний внесок</th>
+       <% @result.all_pay.each do |p| %>
+          <td><%= p.round(2) %></td>
+        <% end %>
+      </tr>
+      <tr>
+      <th>Залишок кредиту</th>
+        <% @result.main_pay.each do |p| %>
+          <td><%= p.round(2) %></td>
+        <% end %>
+      </tr>
+    </table>
+  </body>
+</html>
